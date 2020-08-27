@@ -93,3 +93,24 @@ exams.each do |exam|
 end
 # →Mathの結果は80点です
 # →Scienceの結果は55点です
+
+
+
+# ↓総合演習↓
+characters = [
+  {name: "にんじゃわんこ", age: 14},
+  {name: "ひつじ仙人"},
+  {name: "ベイビーわんこ", age: 5},
+  {name: "とりずきん"}
+]
+
+characters.each do |character|
+  puts "--------------------"
+  puts "名前は#{character[:name]}です"
+  
+  if character[:age]
+    puts "年齢は#{character[:age]}歳です"
+  else
+    puts "年齢は秘密です"
+  end  
+end
