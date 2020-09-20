@@ -63,3 +63,43 @@ puts exam[:score]
 exam = {subject:"Math", score:80}
 puts "#{exam[:subject]}: #{exam[:score]}点"
 # →Math: 80点
+
+
+
+# 8.nilとは(ハッシュに存在しないキーの値を出力し何も出力されないこと。jsでいうundefined)
+exam = {subject: "Math", score: 80}
+puts exam[:grade]
+# →出力されない(nil)
+
+# ↓nilの回避(条件分岐を使用する)↓
+exam = {subject: "Math"}
+if exam[:score]
+  puts "#{exam[:subject]}の結果は#{exam[:score]}点です"
+else
+  puts "#{exam[:subject]}の結果は分かりません"
+end
+# →Mathの結果は分かりません
+
+
+
+# 9.配列の中にハッシュがある記述(ハッシュ名 = [{キー1:値1},{キー2:値2}])
+exams = [
+  {subject: "Math", score: 80},
+  {subject: "Science", score: 55}
+]
+puts exams[1][:score]
+# →55
+
+
+
+# 10.配列の中にハッシュ + eachによる繰り返し処理
+exams = [
+  {subject: "Math", score: 80},
+  {subject: "Science", score: 55}
+]
+
+exams.each do |exam|
+  puts "#{exam[:subject]}の結果は#{exam[:score]}点です"
+end
+# →Mathの結果は80点です
+# →Scienceの結果は55点です
